@@ -16,7 +16,7 @@ public class Main {
         int result;
         char response = 'y';
         int resultArr[] = new int[36];
-        //
+
 
         while (response == 'y' || response == 'Y' && total <= 0)
         {
@@ -41,6 +41,7 @@ public class Main {
             rouletteNum = generator.nextInt(37);
             spin++;
             System.out.println("Roulette number: " + rouletteNum);
+            System.out.println();
 
             if (choice == 2)
             {
@@ -61,9 +62,12 @@ public class Main {
             if (result > 0)
             {
                 System.out.println("Congratulations!!! You win!");
+                System.out.println();
                 System.out.printf("You have won R%.2f \n", result * amount);
+                System.out.println();
                 System.out.printf("Here's your money back: R%.2f \n",
                         (result + 1) * amount);
+                System.out.println();
                 total = (result + 1) * amount + total;
                 win ++;
                 resultArr[rouletteNum]++;
@@ -72,8 +76,10 @@ public class Main {
             else
             {
                 System.out.println("You lose. Better luck next time!");
+                System.out.println();
                 System.out.printf("You have lost R%.2f \n",
                         (result + 1) * amount);
+                System.out.println();
                 total = total - (result + 1) * (amount);
                 lose ++;
                 resultArr[rouletteNum]++;
@@ -88,6 +94,7 @@ public class Main {
             for (int totals=1; totals<36; totals++) {
                 if( resultArr[totals] > 0 ) {
                     System.out.println("The number " + totals + " won " + resultArr[totals] + " times.");
+                    System.out.println();
                 }
             }
 
@@ -96,10 +103,15 @@ public class Main {
 
 
             System.out.println("You have R" + total + " remaining." );
+            System.out.println();
             System.out.println("You have won " + win + " games.");
+            System.out.println();
             System.out.println("You have lost " + lose + " games.");
+            System.out.println();
             System.out.println("The wheel has been spun " + spin + " times.");
+            System.out.println();
             System.out.print("\nWould you like to play another game? (y/n) ");
+            System.out.println();
             response = keyboard.next().charAt(0);
 
 
