@@ -25,9 +25,9 @@ public class Main {
 
         //If user inputs 'n' (no), print below.
         if (vCheck1.equals("n")) {
-            System.out.println("You start off with $1000, and your goal is to cash out with as much money as possible.");
+            System.out.println("You start off with R1000, and your goal is to cash out with as much money as possible.");
             System.out.println("Each time you cash out, your money will get sent to the high scores if it is within the top 5.");
-            System.out.println("If your money goes to $0 or below, you will lose.");
+            System.out.println("If your money goes to R0 or below, you will lose.");
             System.out.println("WARNING: Cashing out will reset the game.");
             System.out.println("You will be able to see the commands at any time, by typing 'commands'.");
             System.out.println("+--------------------------------------------------------------+");
@@ -99,7 +99,7 @@ public class Main {
             payout = 0;
             System.out.println("Round " + rounds + ".");
 
-            System.out.println("You have $" + money + ".");
+            System.out.println("You have R" + money + ".");
             System.out.println("What would you like to do?");
             System.out.println("Commands: | bet | money | cashout | help | restart |");
             answer = input.next();
@@ -113,22 +113,22 @@ public class Main {
             }
 
             while (answer.equals("money")) {
-                System.out.println("Your balance is at $" + money + ".");
+                System.out.println("Your balance is at R" + money + ".");
                 System.out.println("What would you like to do?");
                 System.out.println("Commands: | bet | money | cashout | help | restart |");
                 answer = input.next();
             }
 
             while (answer.equals("cashout")) {
-                System.out.println("Are you sure you want to cashout $" + money + "? Y/N.");
+                System.out.println("Are you sure you want to cashout R" + money + "? Y/N.");
                 confirmationCashout = input.next();
                 while (!(confirmationCashout.equals("y")) && !(confirmationCashout.equals("n"))) {
                     System.out.println("Please input either 'y' (yes) or 'n' (no). ");
-                    System.out.println("Are you sure you want to cashout $" + money + "? Y/N.");
+                    System.out.println("Are you sure you want to cashout R" + money + "? Y/N.");
                     confirmationCashout = input.next();
                 }
                 if (confirmationCashout.equals("y")) {
-                    System.out.println("You have cashed out $" + money + " with a " +
+                    System.out.println("You have cashed out R" + money + " with a " +
                             winStreak + " win streak within " + rounds + " rounds.");
                     break CASHOUT_BREAK_OUT;
                 }
@@ -164,9 +164,9 @@ public class Main {
                 }
             }
             while (answer.equals("help")) {
-                System.out.println("You start off with $1000, and your goal is to cash out with as much money as possible.");
+                System.out.println("You start off with R1000, and your goal is to cash out with as much money as possible.");
                 System.out.println("Each time you cash out, your money will get sent to the high scores if it is within the top 5.");
-                System.out.println("If your money goes to $0 or below, you will lose.");
+                System.out.println("If your money goes to R0 or below, you will lose.");
                 System.out.println("WARNING: Cashing out will reset the game.");
                 System.out.println("You will be able to see the commands at any time, by typing 'commands'.");
                 System.out.println("+--------------------------------------------------------------+");
@@ -291,12 +291,12 @@ public class Main {
                 if (randomNum < 4738) {
                     money += payout;
                     winStreak += 1;
-                    System.out.println("You won $" + payout + " with 47.37%!");
+                    System.out.println("You won R" + payout + " with 47.37%!");
                 }
                 if (randomNum > 4738) {
                     money -= gamble;
                     winStreak = 0;
-                    System.out.println("You lost $" + gamble + " with 52.63%!");
+                    System.out.println("You lost R" + gamble + " with 52.63%!");
                 }
             } else if (bet.equals("1to12") || bet.equals("13to24") || bet.equals("25to36")) {
                 randomNum = rand.nextInt(10000) + 1;
@@ -307,108 +307,108 @@ public class Main {
                 if (randomNum < 3158) {
                     money += payout;
                     winStreak += 1;
-                    System.out.println("You won $" + payout + " with 31.58%!");
+                    System.out.println("You won R" + payout + " with 31.58%!");
                 }
                 if (randomNum > 3158) {
                     money -= gamble;
                     winStreak = 0;
-                    System.out.println("You lost $" + gamble + " with 68.42%!");
+                    System.out.println("You lost R" + gamble + " with 68.42%!");
                 }
             } else if (bet.equals("sixline")) {
                 randomNum = rand.nextInt(10000) + 1;
-                System.out.println("Betting $" + gamble + " on " + bet + "...");
+                System.out.println("Betting R" + gamble + " on " + bet + "...");
                 try { Thread.sleep(1000); } catch (InterruptedException ex) { Thread.currentThread().interrupt(); }
                 System.out.println("Spinning...");
                 payout += gamble * 5;
                 if (randomNum < 1579) {
                     money += payout;
                     winStreak += 1;
-                    System.out.println("You won $" + payout + " with 15.79%!");
+                    System.out.println("You won R" + payout + " with 15.79%!");
                 }
                 if (randomNum > 1579) {
                     money -= gamble;
                     winStreak = 0;
-                    System.out.println("You lost $" + gamble + " with 84.21%%!");
+                    System.out.println("You lost R" + gamble + " with 84.21%%!");
                 }
             } else if (bet.equals("firstfive")) {
                 randomNum = rand.nextInt(10000) + 1;
-                System.out.println("Betting $" + gamble + " on " + bet + "...");
+                System.out.println("Betting R" + gamble + " on " + bet + "...");
                 try { Thread.sleep(1000); } catch (InterruptedException ex) { Thread.currentThread().interrupt(); }
                 System.out.println("Spinning...");
                 payout += gamble * 6;
                 if (randomNum < 1316) {
                     money += payout;
                     winStreak += 1;
-                    System.out.println("You won $" + payout + " with 13.16%!");
+                    System.out.println("You won R" + payout + " with 13.16%!");
                 }
                 if (randomNum > 1316) {
                     money -= gamble;
                     winStreak = 0;
-                    System.out.println("You lost $" + gamble + " with 86.84%%!");
+                    System.out.println("You lost R" + gamble + " with 86.84%%!");
                 }
             } else if (bet.equals("corner")) {
                 randomNum = rand.nextInt(10000) + 1;
-                System.out.println("Betting $" + gamble + " on " + bet + "...");
+                System.out.println("Betting R" + gamble + " on " + bet + "...");
                 try { Thread.sleep(1000); } catch (InterruptedException ex) { Thread.currentThread().interrupt(); }
                 System.out.println("Spinning...");
                 payout += gamble * 8;
                 if (randomNum < 1316) {
                     money += payout;
                     winStreak += 1;
-                    System.out.println("You won $" + payout + " with 10.53%!");
+                    System.out.println("You won R" + payout + " with 10.53%!");
                 }
                 if (randomNum > 1316) {
                     money -= gamble;
                     winStreak = 0;
-                    System.out.println("You lost $" + gamble + " with 89.47%%!");
+                    System.out.println("You lost R" + gamble + " with 89.47%%!");
                 }
             } else if (bet.equals("street")) {
                 randomNum = rand.nextInt(10000) + 1;
-                System.out.println("Betting $" + gamble + " on " + bet + "...");
+                System.out.println("Betting R" + gamble + " on " + bet + "...");
                 try { Thread.sleep(1000); } catch (InterruptedException ex) { Thread.currentThread().interrupt(); }
                 System.out.println("Spinning...");
                 payout += gamble * 11;
                 if (randomNum < 789) {
                     money += payout;
                     winStreak += 1;
-                    System.out.println("You won $" + payout + " with 7.895%!");
+                    System.out.println("You won R" + payout + " with 7.895%!");
                 }
                 if (randomNum > 789) {
                     money -= gamble;
                     winStreak = 0;
-                    System.out.println("You lost $" + gamble + " with 92.105%!");
+                    System.out.println("You lost R" + gamble + " with 92.105%!");
                 }
             } else if (bet.equals("split")) {
                 randomNum = rand.nextInt(10000) + 1;
-                System.out.println("Betting $" + gamble + " on " + bet + "...");
+                System.out.println("Betting R" + gamble + " on " + bet + "...");
                 try { Thread.sleep(1000); } catch (InterruptedException ex) { Thread.currentThread().interrupt(); }
                 System.out.println("Spinning...");
                 payout += gamble * 17;
                 if (randomNum < 526) {
                     money += payout;
                     winStreak += 1;
-                    System.out.println("You won $" + payout + " with 5.26%!");
+                    System.out.println("You won R" + payout + " with 5.26%!");
                 }
                 if (randomNum > 526) {
                     money -= gamble;
                     winStreak = 0;
-                    System.out.println("You lost $" + gamble + " with 94.74%!");
+                    System.out.println("You lost R" + gamble + " with 94.74%!");
                 }
             } else if (bet.equals("any")) {
                 randomNum = rand.nextInt(10000) + 1;
-                System.out.println("Betting $" + gamble + " on " + bet + "...");
+                System.out.println("Betting R" + gamble + " on " + bet + "...");
                 try { Thread.sleep(1000); } catch (InterruptedException ex) { Thread.currentThread().interrupt(); }
                 System.out.println("Spinning...");
                 payout += gamble * 35;
                 if (randomNum < 262) {
                     money += payout;
                     winStreak += 1;
-                    System.out.println("You won $" + payout + " with 2.62%!");
+                    System.out.println("You won R" + payout + " with 2.62%!");
                 }
                 if (randomNum > 262) {
                     money -= gamble;
                     winStreak = 0;
-                    System.out.println("You lost $" + gamble + " with 97.38%!");
+                    System.out.println("You lost R" + gamble + " with 97.38%!");
                 }
             }
 
@@ -419,8 +419,8 @@ public class Main {
 
             System.out.println("You are on a " + winStreak + " win streak.");
             if (winStreak == 3) {
-                System.out.println("You have been awarded $500 for your third win streak!");
-                System.out.println("$500 has been deposited into your account.");
+                System.out.println("You have been awarded R500 for your third win streak!");
+                System.out.println("R500 has been deposited into your account.");
                 money+= 500;
             }
             rounds += 1;
